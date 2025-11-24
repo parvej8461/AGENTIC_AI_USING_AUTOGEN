@@ -1,58 +1,57 @@
-# Agentic AI Using AutoGen
+###Agentic AI Using AutoGen, Gemini & Gradio
 
-This project demonstrates the implementation of Agentic Artificial Intelligence using Microsoft's AutoGen framework. AutoGen allows the creation of intelligent agents capable of autonomous decision making, collaboration, and structured task execution.
+This project demonstrates how to build an agentic AI system using Microsoft AutoGen, Google Gemini models, and a Gradio-based interactive interface. It showcases how multiple intelligent agents can collaborate, communicate, and solve tasks autonomously using large-language-model reasoning.
 
-## Features
+##Overview
 
-- Multi-agent collaboration
-- Automated task breakdown and execution
-- LLM-to-LLM communication
-- Extendable architecture for custom tools and agents
-- Jupyter Notebook example of real implementation
+The notebook integrates AutoGen for multi-agent orchestration and Gemini (via ag2) as the primary language model. A minimal Gradio interface enables users to submit queries while observing how agents interact to produce responses. Environment variables are handled through python-dotenv for secure API key management.
 
-## Repository Structure
+This implementation provides a concise example of building agentic workflows, where agents perform coordinated reasoning, planning, and problem solving. It also includes the model configuration, agent initialization, and UI setup required to run a basic agentic system.
 
-📁 Project Folder
-├─ agentic ai using autogen.ipynb # Main demonstration notebook
-├─ README.md # Documentation
+##Core Technologies
+Library	Purpose
+AutoGen (pyautogen)	Multi-agent orchestration and communication
+ag2 (Gemini integration)	Wrapper for Google Gemini models
+Gradio	Interactive interface for user inputs
+python-dotenv	Secure environment variable loading
+Google Generative AI	LLM backend (Gemini 2.5 Flash)
+Notebook Contents
 
+Gemini model configuration (config_list_gemini)
 
-## Installation
+Environment variable setup
 
-### Step 1: Clone the repository
-```bash
-git clone  https://github.com/parvej8461/Agentic_AI_using_Autogen.git
-cd <your-repo>
+Initialization of AutoGen agents
 
-python -m venv venv
-source venv/bin/activate   # Mac / Linux
-venv\Scripts\activate      # Windows
-What is Agentic AI?
+Communication workflow between agents
 
-Agentic AI systems are designed to:
+Gradio UI setup for interacting with the system
 
-Reason about objectives
+Logic for processing user queries through collaborative agents
 
-Take initiative without explicit human prompting
+How It Works
+Model Configuration
 
-Break tasks into manageable subtasks
+The notebook loads API keys through environment variables and prepares a unified Gemini configuration for all agents.
 
-Use external tools and communicate with other agents
+Agent Creation
 
-AutoGen provides a modular system to design such coordinated agents.
+Two or more agents are defined using AutoGen, each with specific roles such as user proxy, assistant, or reasoning agent.
+
+Agent Collaboration
+
+Agents communicate through AutoGen’s built-in messaging framework, coordinating to produce answers or solve tasks using Gemini responses.
+
+User Interface
+
+A simple Gradio interface allows users to submit prompts and view the final combined output generated through agent communication.
 
 Future Enhancements
 
-Add advanced tools and memory capabilities
+Introduce memory-enabled agents
 
-Integrate external APIs and knowledge sources
+Add tool-executing agents (e.g., code execution, retrieval, external tools)
 
-Convert into a deployable application
+Expand the number of agent roles such as planner, critic, or executor
 
-Contributing
-
-Contributions are welcome. You can fork this project, create a branch, and submit a pull request.
-
-License
-
-This project is licensed under the MIT License.
+Enable persistent logs of agent conversations
